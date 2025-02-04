@@ -1,169 +1,346 @@
-/* AIAssistant.css */
-
+/* Existing Container and Section Styles */
 .ai-assistant-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 25px;
-    background-color: #eef5ff;
-    border-radius: 15px;
-    max-width: 1000px;
-    margin: 20px auto;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 25px;
+  background-color: #eef5ff;
+  border-radius: 15px;
+  max-width: 1000px;
+  margin: 20px auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+/* Section Styling */
+.text-section, 
+.summary-section {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  padding: 25px;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effects for Sections */
+.text-section:hover,
+.summary-section:hover {
+  transform: translateY(-5px);
+}
+
+.text-section {
+  background-color: #e3f2fd;
+}
+
+.summary-section {
+  background-color: #fffaf0;
+}
+
+/* Headings */
+h2 {
+  color: #222;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-family: 'Arial', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  resize: vertical;
+  min-height: 160px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
+}
+
+/* Button */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* AI Suggestions */
+.ai-suggestion p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+/* Suggestions List */
+.suggestions-list {
+  margin-top: 12px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.suggestions-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #ddd;
+}
+
+.suggestions-list li:hover {
+  background-color: #d6eaff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .ai-assistant-container {
+    padding: 20px;
   }
-  
-  /* Left and Right Sections */
+
   .text-section, 
   .summary-section {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    padding: 25px;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .text-section:hover,
-  .summary-section:hover {
-    transform: translateY(-5px);
-  }
-  
-  .text-section {
-    background-color: #e3f2fd;
-  }
-  
-  .summary-section {
-    background-color: #fffaf0;
-  }
-  
-  /* Headings */
-  h2 {
-    color: #222;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 18px;
-    text-align: center;
-  }
-  
-  /* Textarea */
-  textarea {
     width: 100%;
-    padding: 14px;
-    font-size: 1.1rem;
-    font-family: 'Arial', sans-serif;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
-    background-color: #fff;
-    resize: vertical;
-    min-height: 160px;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  textarea:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 6px rgba(52, 152, 219, 0.5);
-  }
-  
-  /* Button */
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 14px 20px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 100%;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
-  button:focus {
-    outline: none;
-  }
-  
-  /* AI Suggestions */
-  .ai-suggestion p {
-    color: #555;
-    font-size: 0.95rem;
-    margin-top: 10px;
+    margin-bottom: 20px;
   }
 
-  
-  /* Suggestions List */
-  .suggestions-list {
-    margin-top: 12px;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 10px;
+  h2 {
+    font-size: 1.6rem;
   }
-  
-  .suggestions-list ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+
+  textarea {
+    font-size: 1rem;
   }
-  
-  .suggestions-list li {
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid #ddd;
+
+  button {
+    font-size: 1rem;
   }
-  
-  .suggestions-list li:hover {
-    background-color: #d6eaff;
+}
+
+@media (max-width: 480px) {
+  .ai-assistant-container {
+    padding: 15px;
   }
-  
-  /* Mobile Responsive */
-  @media (max-width: 768px) {
-    .ai-assistant-container {
-      grid-template-columns: 1fr;
-      padding: 20px;
-    }
-  
-    .text-section, 
-    .summary-section {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  
-    h2 {
-      font-size: 1.6rem;
-    }
-  
-    textarea {
-      font-size: 1rem;
-    }
-  
-    button {
-      font-size: 1rem;
-    }
+
+  h2 {
+    font-size: 1.4rem;
   }
-  
-  @media (max-width: 480px) {
-    .ai-assistant-container {
-      padding: 15px;
-    }
-  
-    h2 {
-      font-size: 1.4rem;
-    }
-  
-    textarea {
-      font-size: 0.95rem;
-    }
-  
-    button {
-      font-size: 0.95rem;
-    }
+
+  textarea {
+    font-size: 0.95rem;
   }
-  
+
+  button {
+    font-size: 0.95rem;
+  }
+}
+
+/* New Troubleshooting Steps Section */
+.troubleshooting-steps {
+  margin-top: 20px;
+  background-color: #e6f7ff;  /* Soft light blue background */
+  padding: 15px;
+  border: 1px solid #b3e0ff;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.troubleshooting-steps h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e3a8a;  /* Dark blue for the heading */
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.troubleshooting-steps p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  background-color: #222;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color:powderblue;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.modal h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.modal p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.modal button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #0056b3;
+}
+
+/* Add CSS rules for the dynamically generated HTML content */
+.markdown-content {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4 {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+.markdown-content pre {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid #1e3a8a;
+  margin-left: 10px;
+  padding-left: 10px;
+  font-style: italic;
+  color: #666;
+}
+
+
+/* Full-screen Loading Overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures it covers the entire screen */
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.issue-resolution {
+  display: flex;
+  justify-content: space-between; /* This will space out the buttons evenly */
+  gap: 10px; /* Optional: adds some space between buttons */
+  margin-top: 10px; /* Optional: adds margin on top of the button container */
+}
+
+.issue-resolution button {
+  flex: 1; /* Makes buttons take equal width */
+  padding: 10px 20px; /* Adjusts the button padding */
+  font-size: 16px; /* Adjusts the font size */
+  cursor: pointer; /* Shows pointer cursor on hover */
+  border: none; /* Removes button borders */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.issue-resolution button:hover {
+  background-color: #0056b3; /* Darkens background on hover */
+}

@@ -24,7 +24,7 @@ const Navbar = () => {
     <div className="header">
       <nav className="nav-links">
         <a href="/ai-assistance" className={`nav-item ${location.pathname === "/ai-assistance" ? "active" : ""}`}>
-          AI Assistance
+          Poorna Assistance
         </a>
         <a href="/employee-tickets" className={`nav-item ${location.pathname === "/employee-tickets" ? "active" : ""}`}>
           Employee Tickets
