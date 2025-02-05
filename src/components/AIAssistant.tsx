@@ -56,6 +56,7 @@ const AIAssistant: React.FC = () => {
       console.error("Error fetching autocomplete suggestions:", error);
       setError("Error fetching autocomplete suggestions. Please try again.");
     } 
+
   };
 
   // Fetch summary and troubleshooting steps
@@ -139,6 +140,7 @@ const AIAssistant: React.FC = () => {
       setTimeout(() => {
         window.location.reload();
       }, 2500);
+
     }
   };
 
