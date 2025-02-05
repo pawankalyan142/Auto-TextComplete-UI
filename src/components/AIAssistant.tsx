@@ -41,7 +41,6 @@ const AIAssistant: React.FC = () => {
 
   // Fetch suggestions from the API
   const fetchSuggestions = async (text: string) => {
-    setIsLoading(true);
     try {
       const response = await fetch("http://192.168.32.242:8213/autocomplete", {
         method: "POST",
@@ -56,9 +55,7 @@ const AIAssistant: React.FC = () => {
     } catch (error) {
       console.error("Error fetching autocomplete suggestions:", error);
       setError("Error fetching autocomplete suggestions. Please try again.");
-    } finally {
-      setIsLoading(false);
-    }
+    } 
   };
 
   // Fetch summary and troubleshooting steps
@@ -141,7 +138,7 @@ const AIAssistant: React.FC = () => {
 
       setTimeout(() => {
         window.location.reload();
-      }, 2000);
+      }, 2500);
     }
   };
 

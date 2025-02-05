@@ -1,128 +1,143 @@
-/* EmployeeTickets.css */
-
+/* Employee Ticket Section */
 .employee-ticket-section {
-    margin-top: 30px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
-    padding: 25px;
-    max-width: 1100px;
-    margin: 30px auto;
+  margin-top: 30px;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 1400px;
+  margin: 30px auto;
+  border: 1px solid #d1d5db;
+  text-align: center;
+}
+
+/* Heading */
+.employee-ticket-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #374151;
+  margin-bottom: 25px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+table th, table td {
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #e5e7eb; /* Border for table columns */
+  font-size: 1.1rem;
+  color: #333;
+  vertical-align: middle;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+table th {
+  background-color: #3b9dd9;
+  color: white;
+  font-weight: 600;
+}
+
+table tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Wrap text in ticket description column */
+.ticket-description {
+  max-width: 300px;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Box */
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 550px;
+  width: 100%;
+  border-top: 5px solid #4b5563;
+  text-align: center;
+}
+
+.modal h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #374151;
+}
+
+.modal p {
+  font-size: 1rem;
+  margin: 12px 0;
+  color: #444;
+}
+
+/* Buttons */
+.modal button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.modal button:hover {
+  background-color: #374151;
+  transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .employee-ticket-section {
+    padding: 20px;
   }
-  
-  /* Heading */
-  .employee-ticket-section h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 25px;
+
+  table th, table td {
+    font-size: 1rem;
+    padding: 12px;
   }
-  
-  /* Table */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  table th,
-  table td {
-    padding: 14px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    font-size: 1.1rem;
-  }
-  
-  table th {
-    background-color: #f0f5ff;
-    color: #333;
-  }
-  
-  table tr:hover {
-    background-color: #f9f9f9;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  /* Modal Overlay */
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  /* Modal Box */
+
   .modal {
-    background-color: powderblue;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    max-width: 550px;
-    width: 100%;
+    max-width: 90%;
   }
-  
-  .modal h3 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .employee-ticket-section {
+    padding: 15px;
   }
-  
-  .modal p {
-    font-size: 1rem;
-    margin: 12px 0;
+
+  table th, table td {
+    font-size: 0.9rem;
+    padding: 10px;
   }
-  
-  .modal button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    font-size: 1rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .modal button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
-  /* Mobile Responsive */
-  @media (max-width: 768px) {
-    .employee-ticket-section {
-      padding: 20px;
-    }
-  
-    table th, 
-    table td {
-      font-size: 1rem;
-      padding: 10px;
-    }
-  
-    .modal {
-      max-width: 90%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .employee-ticket-section {
-      padding: 15px;
-    }
-  
-    table th, 
-    table td {
-      font-size: 0.9rem;
-      padding: 8px;
-    }
-  }
-  
+}
